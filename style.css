@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    color: orange;
+}
+
+.list{
+    text-align: center;
+    list-style: none;
+}
+
+.container{
+    width: 400px;
+    margin: 20px auto;
+    height: 200px;
+    /* background-color: beige; */
+}
+
+.battery{
+    width: 300px;
+    height: 90px;
+    border: 1px solid #c0c0c0;
+    border-radius: 6px;
+    padding: 10px;
+    position: relative;
+}
+
+.battery::after{
+    content: '';
+    display: block;
+    width: 15px;
+    height: 30px;
+    background-color: rgb(255, 255, 255);
+    right: -17px;
+    top: 29px;
+    border: 1px solid #c0c0c0;
+    border-radius: 0 4px 4px 0;
+    border-left-color: #fff;
+    position: absolute;
+}
+
+.battery-level{
+    height: 100%;
+    width: 30%;
+    background: rgb(34,105,195);
+    background: linear-gradient(0deg, rgba(34,105,195,1) 15%, rgba(119,233,117,1) 100%);
+    transition: all ease 1s;
+}
+
+.battery-level-digit{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    text-align: center;
+    font-size: 70px;
+    line-height: 92px;
+}
+
+.battery-animation{
+    animation-name: battery-charget;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes battery-charget{
+    0%{
+        width: 20%;
+    }
+    100%{
+        width: 100%;
+    }
+}
